@@ -1,4 +1,4 @@
-# anvo_scraper: 
+# xeno_scraper: 
 Scraper for downloading open-source and permissibly licensed animal vocalizatons from websites like Xeno-Canto. 
 Uses flexible filtering and organized file management.
 
@@ -12,7 +12,7 @@ Uses flexible filtering and organized file management.
 
 #### Clone or download the script
 ```bash
-git clone https://github.com/laelume/anvo_scraper
+git clone https://github.com/laelume/xeno_scraper
 ```
 
 #### Install dependencies
@@ -21,12 +21,20 @@ pip install requirements.txt
 ```
 
 #### Run the script
+
+### From Command Line: 
 ```bash
-python anvo_scraper.py
+python xeno_scraper.py
 ```
 
+### From Jupyter: 
+Simply execute the script from within a Jupyter console or inside an editor like Codium:
+```bash 
+xeno_scraper.ipynb
+```
 
 ## How To Use: 
+
 
 ### Scientific name search
 ```bash
@@ -53,24 +61,24 @@ download_animal_sounds('kiwi', quality='A')
 download_animal_sounds('owl', limit=None, quality=None)
 ```
 
-## Features
+### Features
 
-### Flexible search: Common names, scientific names, or genus
-### Quality filtering: A-E ratings or unrated recordings
-### Duration limits: Filter by recording length
-### Auto-organization: Creates species/quality directory structure
-### Cross-platform: Works on Windows, macOS, Linux
-### Progress tracking: Shows download progress and final count
-### Rate limiting: Respects API limits with built-in delays
+#### Flexible search: Common names, scientific names, or genus
+#### Quality filtering: A-E ratings or unrated recordings
+#### Duration limits: Filter by recording length
+#### Auto-organization: Creates species/quality directory structure
+#### Cross-platform: Works on Windows, macOS, Linux
+#### Progress tracking: Shows download progress and final count
+#### Rate limiting: Respects API limits with built-in delays
 
-## Quality Ratings (from Xeno-Canto)
+### Quality Ratings (from Xeno-Canto)
 
-### A: Excellent quality
-### B: Good quality
-### C: Average quality
-### D: Poor quality
-### E: Lowest quality
-### None: Include unrated recordings
+#### A: Excellent quality
+#### B: Good quality
+#### C: Average quality
+#### D: Poor quality
+#### E: Lowest quality
+#### None: Include unrated recordings
 
-## Rate Limiting
-### The script includes a 1-second delay between downloads to respect Xeno-Canto's server resources. For large downloads, consider breaking them into smaller batches.
+### Rate Limiting
+#### The script includes a 1-second delay between downloads to respect Xeno-Canto's server resources. For large downloads, consider breaking them into smaller batches.
