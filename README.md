@@ -1,40 +1,58 @@
-# anvo_scrapy: 
-Python web scraper for downloading open-source and permissibly licensed animal vocalizatons from websites like Xeno-Canto. 
-Downloads by species common or latin name, limits by length or quality, and optionally organizes files by filter choices. Xeno-Canto files are typically stored as .mp3 files, so unless teh extension differes on the source website, this script will probably also store in .mp3 format. (If source file characteristics are different, downloaded files should match original.)
+## anvo_scrapr: 
+R package for downloading open-source and permissibly licensed animal vocalizatons from websites like Xeno-Canto. 
+Downloads by species common or latin name, limits by length or quality, and optionally organizes files by filter choices. 
 
-## Installation
+##### **Note**: Xeno-Canto files are typically stored as .mp3 files, so unless the file extension differes on the source website, this script will probably also store audio in .mp3 format. (If source file characteristics are different, downloaded files should match original.)
 
-### Prerequisites
-- Python 3.6+
+### Installation
+##### Prerequisites
+- R 4.0+
 - Internet connection
 
 ### Setup
 
-#### Clone or download the script
+#### 1. Install from GitHub (Recommended for now)
+
+##### Make sure you have devtools for R 
 ```bash
-git clone https://github.com/laelume/anvo_scrapy
+install.packages("devtools")
 ```
-
-#### Install dependencies
+##### Install package
 ```bash
-pip install requirements.txt
+devtools::install_github("laelume/anvo_scrapr")
 ```
-
-#### Run the script
-
-### From Command Line: 
+##### Load the package in R
 ```bash
-python anvo_scrapy.py
+library(anvoscrapr)
 ```
-
-### From Jupyter: 
-Simply execute the script from within a Jupyter console or inside an editor like Codium:
-```bash 
-anvo_scrapy.ipynb
+#### 2. Manual install and load
+##### A. Clone, or
+```bash
+git clone https://github.com/laelume/anvo_scrapr
+```
+##### B. Download the script
+```bash
+download.file("https://raw.githubusercontent.com/laelume/anvo_scrapr/main/anvo_scrapr.R", "anvo_scrapr.R")
+```
+##### Install dependencies
+```bash
+install.packages(c("httr", "jsonlite"))
+```
+##### Load script
+```bash
+source("anvo_scrapr.R")
+```
+#### 3. Remote install
+##### Get remotes package
+```bash
+install.packages("remotes")
+```
+##### Install from github using remotes
+```bash
+remotes::install_github("laelume/anvo_scrapr")
 ```
 
 ## How To Use: 
-
 
 ### Scientific name search
 ```bash
@@ -50,7 +68,7 @@ download_animal_sounds('eagle', output_dir='raptors', quality='B')
 ```
 ### Bulk download, any quality
 ```bash
-download_animal_sounds('warbler', limit=None, quality=None)
+download_animal_sounds('warbler', limit=NULL, quality=NULL)
 ```
 ### Download high-quality kiwi sounds
 ```bash
@@ -58,27 +76,27 @@ download_animal_sounds('kiwi', quality='A')
 ```
 ### Download any quality owl sounds, no limit on how many files it downloads
 ```bash
-download_animal_sounds('owl', limit=None, quality=None)
+download_animal_sounds('owl', limit=None, quality=NULL)
 ```
 
-### Features
+#### Features
 
-#### Flexible search: Common names, scientific names, or genus
-#### Quality filtering: A-E ratings or unrated recordings
-#### Duration limits: Filter by recording length
-#### Auto-organization: Creates species/quality directory structure
-#### Cross-platform: Works on Windows, macOS, Linux
-#### Progress tracking: Shows download progress and final count
-#### Rate limiting: Respects API limits with built-in delays
+##### - Flexible search: Common names, scientific names, or genus
+##### - Quality filtering: A-E ratings or unrated recordings
+##### - Duration limits: Filter by recording length
+##### - Auto-organization: Creates species/quality directory structure
+##### - Cross-platform: Works on Windows, macOS, Linux
+##### - Progress tracking: Shows download progress and final count
+##### - Rate limiting: Respects API limits with built-in delays
 
-### Quality Ratings (from Xeno-Canto)
+#### Quality Ratings (from Xeno-Canto)
 
-#### A: Excellent quality
-#### B: Good quality
-#### C: Average quality
-#### D: Poor quality
-#### E: Lowest quality
+##### A: Excellent quality
+##### B: Good quality
+##### C: Average quality
+##### D: Poor quality
+##### E: Lowest quality
 #### None: Include unrated recordings
 
-### Rate Limiting
-#### The script includes a 1-second delay between downloads to respect Xeno-Canto's server resources. For large downloads, consider breaking them into smaller batches.
+#### Rate Limiting
+##### The script includes a 1-second delay between downloads to respect Xeno-Canto's server resources. For large downloads, consider breaking them into smaller batches.
