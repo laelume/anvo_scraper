@@ -29,23 +29,29 @@ python anvo_scraper.py
 ## How To Use: 
 
 ### Scientific name search
+```bash
 download_animal_sounds('Corvus', quality='A', limit=20)
-
+```
 ### Short recordings only
+```bash
 download_animal_sounds('cardinal', max_duration_minutes=0.5)
-
+```
 ### Custom organization
+```bash
 download_animal_sounds('eagle', output_dir='raptors', quality='B')
-
+```
 ### Bulk download, any quality
+```bash
 download_animal_sounds('warbler', limit=None, quality=None)
-
+```
 ### Download high-quality kiwi sounds
+```bash
 download_animal_sounds('kiwi', quality='A')
-
+```
 ### Download any quality owl sounds, no limit on how many files it downloads
+```bash
 download_animal_sounds('owl', limit=None, quality=None)
-
+```
 
 ## Features
 
