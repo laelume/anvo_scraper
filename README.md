@@ -1,6 +1,6 @@
-# xeno_scraper: 
-Scraper for downloading open-source and permissibly licensed animal vocalizatons from websites like Xeno-Canto. 
-Uses flexible filtering and organized file management.
+# anvo_scrapy: 
+Python web scraper for downloading open-source and permissibly licensed animal vocalizatons from websites like Xeno-Canto. 
+Downloads by species common or latin name, limits by length or quality, and optionally organizes files by filter choices. Xeno-Canto files are typically stored as .mp3 files, so unless teh extension differes on the source website, this script will probably also store in .mp3 format. (If source file characteristics are different, downloaded files should match original.)
 
 ## Installation
 
@@ -12,7 +12,7 @@ Uses flexible filtering and organized file management.
 
 #### Clone or download the script
 ```bash
-git clone https://github.com/laelume/xeno_scraper
+git clone https://github.com/laelume/anvo_scrapy
 ```
 
 #### Install dependencies
@@ -24,13 +24,13 @@ pip install requirements.txt
 
 ### From Command Line: 
 ```bash
-python xeno_scraper.py
+python anvo_scrapy.py
 ```
 
 ### From Jupyter: 
 Simply execute the script from within a Jupyter console or inside an editor like Codium:
 ```bash 
-xeno_scraper.ipynb
+anvo_scrapy.ipynb
 ```
 
 ## How To Use: 
